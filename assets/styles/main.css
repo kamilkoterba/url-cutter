@@ -8,11 +8,11 @@ body {
 	background-size: cover;
 	color: #fff;
 	font-family: Helvetica, Arial, sans-serif;
-	padding: 20px 35px;
-	text-align: center;
+	padding-top: 20px;
 }
 
 .top-header {
+	padding: 0 35px;
 	text-align: left;
 }
 
@@ -20,9 +20,14 @@ body {
 	width: 180px;
 }
 
-h1 {
+.content {
+	padding: 0 35px;
+}
+
+.main-title {
 	font-size: 78px;
 	font-weight: normal;
+	text-align: center;
 }
 
 /* Instructions */
@@ -63,13 +68,48 @@ h1 {
 .cut-field--errored,
 .cut-field {
 	color: #4f4f4f;
+	display: block;
 	font-size: 34px;
 	height: 77px;
 	line-height: 77px;
+	margin: auto;
 	padding: 0 28px;
 	width: 60%;
 }
 
 .cut-field--errored {
 	background: #fffdcc;
+}
+
+/* Footer */
+.main-footer {
+	align-items: center;
+	background: #fff;
+	color: #4f4f4f;
+	display: flex;
+	font-size: 24px;
+	justify-content: space-between;
+	margin-top: 50px;
+	padding: 30px 73px;
+}
+
+.main-footer__nav-link {
+	border-right: 2px solid #4f4f4f;
+	color: #4f4f4f;
+	display: block;
+	float: left;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+.main-footer__nav-link:last-child {
+	border-right: none;
+}
+
+.main-footer__nav-link:hover {
+	text-decoration: underline;
+}
+
+.main-footer__language {
+	vertical-align: middle;
 }

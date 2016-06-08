@@ -9,14 +9,30 @@
 	<header class="top-header">
 		<img src="assets/images/shortzzz-logo.png" alt="Shortzzz" class="logo">
 	</header>
-	<h1>Short. Links. Forever.</h1>
-	<section class="instructions-section">
-		<h2 id="instructions" class="instructions">Paste your url</h2>
+	<section class="content">
+		<h1 class="main-title">Short. Links. Forever.</h1>
+		<section class="instructions-section">
+			<h2 id="instructions" class="instructions">Paste your url</h2>
+		</section>
+		<form id="cutUrlForm" autocomplete="off">
+			<input type="text" id="urlInput" class="cut-field" placeholder="Here you go">
+		</form>
+		<div id="resultPlaceholder" class="short-url"></div>
 	</section>
-	<form id="cutUrlForm" autocomplete="off">
-		<input type="text" id="urlInput" class="cut-field" placeholder="Here you go">
-	</form>
-	<div id="resultPlaceholder" class="short-url"></div>
+	<footer class="main-footer">
+		<form>
+			<select class="main-footer__language">
+				<option>EN/US</option>
+				<option>PL</option>
+			</select>
+		</form>
+		<nav class="main-footer__nav">
+			<a href="" class="main-footer__nav-link">shorten</a>
+			<a href="" class="main-footer__nav-link">help</a>
+			<a href="" class="main-footer__nav-link">contact</a>
+		</nav>
+		<div class="copyright">&copy; All rights reserved</div>
+	</footer>
 	<script type="text/javascript" src="assets/scripts/urlCutter.js"></script>
 </body>
 </html>
