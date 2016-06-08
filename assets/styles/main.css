@@ -6,11 +6,16 @@ html, body {
 	min-height: 100%;
 }
 
+@font-face {
+	font-family: 'Swis721 Light BT';
+	src:  url('../fonts/ufonts.com_swis721-lt-bt-light.woff') format('woff');
+}
+
 body {
 	background: #f5b35f url('../images/background.jpg') no-repeat 50% 100%;
 	background-size: cover;
 	color: #fff;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Swis721 Light BT', Helvetica, Arial, sans-serif;
 	padding-bottom: 130px;
 }
 
@@ -26,7 +31,7 @@ body {
 
 .top-header__nav {
 	float: right;
-	font-size: 20px;
+	font-size: 18px;
 	padding-top: 10px;
 }
 
@@ -34,7 +39,7 @@ body {
 .top-header__nav-link--active {
 	color: #fff;
 	display: inline-block;
-	padding: 10px 10px 7px;
+	padding: 10px 10px 8px;
 	text-decoration: none;
 	text-transform: uppercase;
 }
@@ -58,14 +63,15 @@ body {
 }
 
 .main-title {
-	font-size: 78px;
+	font-size: 58px;
 	font-weight: normal;
 	text-align: center;
 }
 
 /* Instructions */
 .instructions-section {
-	min-height: 130px;
+	margin: auto;
+	min-height: 80px;
 	text-align: left;
 	width: 80%;
 }
@@ -73,7 +79,7 @@ body {
 .instructions--errored,
 .instructions {
 	display: inline-block;
-	font-size: 35px;
+	font-size: 25px;
 	margin: 0;
 	max-width: 50%;
 	position: relative;
@@ -85,12 +91,12 @@ body {
 	background-size: contain;
 	content: '';
 	display: block;
-	height: 105px;
+	height: 58px;
 	left: calc(100% + 30px);
 	max-width: 90%;
 	position: absolute;
 	top: 15px;
-	width: 240px;
+	width: 132px;
 }
 
 .instructions--errored {
@@ -101,14 +107,14 @@ body {
 .cut-form {
 	margin: auto;
 	position: relative;
-	width: 60%;
+	width: 80%;
 }
 
 .cut-form::after,
 .cut-form::before {
 	color: #cbcbcb;
-	font-size: 50px;
-	line-height: 70px;
+	font-size: 38px;
+	line-height: 52px;
 	pointer-events: none;
 	position: absolute;
 	top: 0;
@@ -116,12 +122,12 @@ body {
 
 .cut-form::after {
 	content: ']';
-	right: 27px;
+	right: 17px;
 }
 
 .cut-form::before {
 	content: '[';
-	left: 27px;
+	left: 17px;
 	z-index: 1;
 }
 
@@ -131,7 +137,7 @@ body {
 	border: 1px solid #f7931e;
 	color: #4f4f4f;
 	display: block;
-	line-height: 77px;
+	line-height: 58px;
 	padding: 0 60px;
 	position: relative;
 }
@@ -153,10 +159,10 @@ body {
 .cut-field--errored,
 .cut-field,
 .magic-placeholder {
-	border-radius: 20px;
+	border-radius: 17px;
 	box-sizing: border-box;
-	font-size: 34px;
-	height: 77px;
+	font-size: 24px;
+	height: 58px;
 	text-align: center;
 	width: 100%;
 }
@@ -170,10 +176,10 @@ body {
 	position: absolute;
 }
 .magic-placeholder__title {
-	font-size: 29px;
+	font-size: 20px;
 }
 .magic-placeholder__subtitle {
-	font-size: 15px;
+	font-size: 11px;
 }
 
 /* Footer */
@@ -182,11 +188,13 @@ body {
 	bottom: 0;
 	box-sizing: border-box;
 	color: #4f4f4f;
-	font-size: 24px;
+	font-size: 18px;
+	line-height: 20px;
 	margin-top: 50px;
 	padding: 20px 73px 30px;
 	position: absolute;
 	width: 100%;
+	z-index: 1;
 }
 
 .main-footer__language {
@@ -204,7 +212,7 @@ body {
 }
 
 .main-footer__nav-link {
-	border-right: 2px solid #4f4f4f;
+	border-right: 1px solid #4f4f4f;
 	color: #4f4f4f;
 	display: block;
 	float: left;
