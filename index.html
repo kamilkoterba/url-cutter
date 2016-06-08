@@ -19,8 +19,12 @@
 		<section class="instructions-section">
 			<h2 id="instructions" class="instructions">Paste your url</h2>
 		</section>
-		<form id="cutUrlForm" autocomplete="off">
-			<input type="text" id="urlInput" class="cut-field" placeholder="Here you go">
+		<form id="cutUrlForm" class="cut-form" autocomplete="off">
+			<div class="magic-placeholder">
+				<span class="magic-placeholder__title">Here you go</span>
+				<span class="magic-placeholder__subtitle">It works like magic</span>
+			</div>
+			<input type="text" id="urlInput" class="cut-field" placeholder="" required="required">
 		</form>
 		<div id="resultPlaceholder" class="short-url"></div>
 	</section>
