@@ -1,6 +1,7 @@
 html {
 	position: relative;
 }
+
 html, body {
 	margin: 0;
 	min-height: 100%;
@@ -8,7 +9,7 @@ html, body {
 
 @font-face {
 	font-family: 'Swis721 Light BT';
-	src:  url('../fonts/ufonts.com_swis721-lt-bt-light.woff') format('woff');
+	src: url('../fonts/ufonts.com_swis721-lt-bt-light.woff') format('woff');
 }
 
 body {
@@ -55,7 +56,7 @@ body {
 	border-radius: 15px;
 	border: 1px solid #f7931e;
 	color: #f9b05a;
-	margin: 0 8px;
+	margin: 0 8px 0 0;
 }
 
 .content {
@@ -191,9 +192,11 @@ body {
 	justify-content: center;
 	position: absolute;
 }
+
 .magic-placeholder__title {
 	font-size: 20px;
 }
+
 .magic-placeholder__subtitle {
 	font-size: 11px;
 }
@@ -247,4 +250,42 @@ body {
 .main-footer__copyright {
 	float: right;
 	margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+	.top-header__logo {
+		display: block;
+		margin: 0 auto 30px;
+	}
+
+	.top-header__nav {
+		float: none;
+		text-align: center;
+	}
+
+	.cut-form--succeded,
+	.cut-form--errored,
+	.cut-form {
+		width: 100%;
+	}
+
+	.cut-field--errored, .cut-field {
+		padding: 0 15px;
+	}
+
+	.main-footer {
+		padding: 15px;
+	}
+
+	.cut-form--succeded::after,
+	.cut-form--errored::after,
+	.cut-form::after {
+		right: 7px;
+	}
+
+	.cut-form--succeded::before,
+	.cut-form--errored::before,
+	.cut-form::before {
+		left: 7px;
+	}
 }
