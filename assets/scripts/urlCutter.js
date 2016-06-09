@@ -1,8 +1,10 @@
 (function () {
   'use strict';
-  var apiUrl = 'http://54.174.44.247/api/shorten/';
+  var host = 'http://54.174.44.247/';
+  var apiUrl = host + 'api/shorten/';
   var fieldLongUrl = 'long_url';
   var fieldShortUrl = 'short_url';
+  var form = document.getElementById('cutUrlForm');
   var inputElement = document.getElementById('urlInput');
   var instructionElement = document.getElementById('instructions');
   var messages = {
@@ -10,11 +12,10 @@
     instructionsErrorGeneral: 'Something went wrong. Please try again.',
     instructionsErrorWrongUrl: 'Enter a valid URL',
     instructionsSuccess: 'Here\'s your short URL',
+    instructionsSuccessRepeated: 'This URL is already shortened',
   };
 
   function init() {
-    var form = document.getElementById('cutUrlForm');
-
     if (form.attachEvent) {
       form.attachEvent('submit', processForm);
     } else {
@@ -23,19 +24,20 @@
   }
 
   function resetErrorState() {
+    form.className = 'cut-form';
     inputElement.className = 'cut-field';
-    instructionElement.className = 'instructions';
     instructionElement.innerHTML = messages.instructionsDefault;
   }
 
   function showError(message) {
+    form.className = 'cut-form--errored';
     inputElement.className = 'cut-field--errored';
-    instructionElement.className = 'instructions--errored';
     instructionElement.innerHTML = message;
   }
 
-  function showSuccess() {
-    instructionElement.innerHTML = messages.instructionsSuccess;
+  function showSuccess(message) {
+    form.className = 'cut-form--succeded';
+    instructionElement.innerHTML = message;
   }
 
   function sendRequest() {
@@ -51,7 +53,7 @@
             showError(messages.instructionsErrorWrongUrl);
             break;
           case 200:
-            showSuccess();
+            showSuccess(messages.instructionsSuccess);
             inputElement.value =
               JSON.parse(this.responseText)[fieldShortUrl];
             break;
@@ -68,6 +70,12 @@
   function processForm(e) {
     if (e.preventDefault) {
       e.preventDefault();
+    }
+
+    // Don't short already shortened URL
+    if (inputElement.value.indexOf(host) > -1) {
+      showSuccess(messages.instructionsSuccessRepeated);
+      return false;
     }
 
     resetErrorState();

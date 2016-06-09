@@ -76,7 +76,6 @@ body {
 	width: 80%;
 }
 
-.instructions--errored,
 .instructions {
 	display: inline-block;
 	font-size: 25px;
@@ -85,7 +84,6 @@ body {
 	position: relative;
 }
 
-.instructions--errored::after,
 .instructions::after {
 	background: url('../images/indicator.svg') no-repeat;
 	background-size: contain;
@@ -99,17 +97,19 @@ body {
 	width: 132px;
 }
 
-.instructions--errored {
-	color: #fff600;
-}
-
 /* URL cut input field */
+.cut-form--succeded,
+.cut-form--errored,
 .cut-form {
 	margin: auto;
 	position: relative;
 	width: 80%;
 }
 
+.cut-form--succeded::after,
+.cut-form--succeded::before,
+.cut-form--errored::after,
+.cut-form--errored::before,
 .cut-form::after,
 .cut-form::before {
 	color: #cbcbcb;
@@ -120,15 +120,29 @@ body {
 	top: 0;
 }
 
+.cut-form--succeded::after,
+.cut-form--errored::after,
 .cut-form::after {
 	content: ']';
 	right: 17px;
 }
 
+.cut-form--succeded::before,
+.cut-form--errored::before,
 .cut-form::before {
 	content: '[';
 	left: 17px;
 	z-index: 1;
+}
+
+.cut-form--errored::after,
+.cut-form--errored::before {
+	color: #ff422c;
+}
+
+.cut-form--succeded::after,
+.cut-form--succeded::before {
+	color: #0DBD0D;
 }
 
 .cut-field--errored,
@@ -152,7 +166,9 @@ body {
 	border: 1px solid #205cca;
 	outline: none;
 }
-.cut-field--errored {
+
+.cut-field--errored,
+.cut-field--errored:valid {
 	background: #fffdcc;
 }
 
